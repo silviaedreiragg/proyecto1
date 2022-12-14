@@ -1,0 +1,15 @@
+.pokemonList {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.list button {
+    size: 20px;
+}
+
+.container {
+    height: 300px;
+    width: 500px;
+}
