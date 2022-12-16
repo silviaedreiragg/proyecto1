@@ -1,17 +1,26 @@
 class Game {
-    constructor() {
-      this.player = new Pikachu(type, life)
+    constructor(ctx) {
+      this.ctx = ctx
+      this.interval = null
+      this.background = new Background(ctx)
+      this.pikachu = new Pikachu(ctx)
+      this.tick = 60 * 5
+      this.audio = new Audio('./assets/sounds/comienzo-batalla.mp3')
+
     }
   
-    start() 
-  
-    stop() 
+    start() {
+      this.audio.play()
+      this.pikachu.sound.play()
 
-    fight() 
-  
-    checkDamage() 
-  
-    gameOver() {
-      this.stop()
+      this.interval = setInterval(() => {
+        this.draw() 
+      }, 1000 / 60)
+    }
+
+    draw() {
+      this.background.draw()
+      this.pikachu.draw()
+      
     }
   }

@@ -1,15 +1,10 @@
-.pokemonList {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-
-}
-
-.list button {
-    size: 20px;
-}
-
 .container {
+    background-image: './assets/images/batalla-campo.png';
+    text-align: center;
+    color: purple;
+    display: flex;
+    justify-content: center;
+    align-self: baseline;
     height: 300px;
-    width: 500px;
+    width: 100%;
 }
