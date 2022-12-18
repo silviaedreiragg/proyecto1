@@ -1,10 +1,22 @@
 .container {
-    background-image: './assets/images/batalla-campo.png';
+    background-image: url('./images/portada.webp');
     text-align: center;
-    color: purple;
     display: flex;
-    justify-content: center;
-    align-self: baseline;
-    height: 300px;
-    width: 100%;
+    color: purple;
+    height: 400px;
+    width: 600px;
+}
+
+#start-btn {
+    text-decoration: solid;
+    text-emphasis: initial;
+    color: coral;
+
+}
+
+.background {
+    text-align: center;
+    display: flex;
+    height: 400px;
+    width: 600px;
 }
