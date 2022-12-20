@@ -5,70 +5,49 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Pokemon Battle Game</title>
-    <link href="./assets/style.css" rel="stylesheet"/>
+    <link href="./assets/style.css" rel="stylesheet" />
 </head>
 
 <body>
+    <div id="fatherDiv">
 
-    <div class="container">
-        <div id="welcome">
-          <h1>POKEMON BATTLE GAME</h1>
-          <button id="start-btn">Click here to start</button>
+        <div class="container">
+            <div id="welcome">
+                <h1>POKEMON BATTLE GAME</h1>
+                <button id="start-btn">Click here to start</button>
+            </div>
+
+            <canvas id="game" width="600px" height="350px">
+
+            </canvas>
         </div>
-    
-        <canvas id="game" width="600px" height="400px">
+
+        <div id="player-life">
+            <label for="file">Life:</label>
+            <progress id="file" max="100" value="100">100%</progress>
         </div>
-        
+
+        <div id="enemy-life">
+            <label for="file">Life:</label>
+            <progress id="file" max="100" value="100">100%</progress>
+        </div>
+
+
+
         <div id="battle"><button id='battle'>BATTLE</button></div>
 
-        <div id="pikachuAttacks">
-            <button id="impactruenobtn">IMPACTRUENO</button>
-            <button id="ataque-rapidobtn">ATAQUE-RAPIDO</button>
-            <button id="latigobtn">LATIGO</button>
-            <button id="chispabtn">CHISPA</button>
+        <div id="player-attacks">
+            <button id="attack-1"></button>
+            <button id="attack-2"></button>
+            <button id="attack-3"></button>
+            <button id="attack-4"></button>
         </div>
 
-        <div id="charmanderAttacks">
-            <button id='ascuasbtn'>ASCUAS</button>
-            <button id="lanzallamasbtn">LANZALLAMAS</button>
-            <button id="mordiscobtn">MORDISCO</button>
-            <button id="doble-equipobtn">DOBLE-EQUIPO</button>
-        </div>
+    </div>
 
-        <div id="bulbasaurAttacks">
-            <button id="placajebtn">PLACAJE</button>
-            <button id="hoja-afiladabtn">HOJA-AFILADA</button>
-            <button id="latigobtn">LÁTIGO</button>
-            <button id="latigo-cepabtn">LÁTIGO-CEPA</button>
-        </div>
-
-        <div id="squirtleAttacks">
-            <button id="ataque-rapido">ATAQUE-RAPIDO</button>
-            <button id="surf">SURF</button>
-            <button id="doble-equipobtn">DOBLE-EQUIPO</button>
-            <button id="pistola-aguabtn">PISTOLA-AGUA</button>
-        </div>
-
-
-    <script src="./assets/javascript/attacks/ascuas.js"></script>
-    <script src="./assets/javascript/attacks/ataque-rapido.js"></script>
-    <script src="./assets/javascript/attacks/chispa.js"></script>
-    <script src="./assets/javascript/attacks/doble-equipo.js"></script>
-    <script src="./assets/javascript/attacks/hoja-afilada.js"></script>
-    <script src="./assets/javascript/attacks/impactrueno.js"></script>
-    <script src="./assets/javascript/attacks/lanzallamas.js"></script>
-    <script src="./assets/javascript/attacks/latigo-cepa.js"></script>
-    <script src="./assets/javascript/attacks/latigo.js"></script>
-    <script src="./assets/javascript/attacks/mordisco.js"></script>
-    <script src="./assets/javascript/attacks/pistola-agua.js"></script>
-    <script src="./assets/javascript/attacks/placaje.js"></script>
-    <script src="./assets/javascript/attacks/surf.js"></script>
+    <script src="./assets/javascript/attack.js"></script>
     <script src="./assets/javascript/pokemon.js"></script>
-    <script src="./assets/javascript/players/bulbasaur.js"></script>
-    <script src="./assets/javascript/players/charmander.js"></script>
-    <script src="./assets/javascript/players/pikachu.js"></script>
-    <script src="./assets/javascript/players/squirtle.js"></script>
-    
+    <script src="./assets/javascript/UI.js"></script>
     <script src="./assets/javascript/background.js"></script>
     <script src="./assets/javascript/game.js"></script>
     <script src="./assets/javascript/script.js"></script>
