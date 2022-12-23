@@ -32,7 +32,7 @@ class Pokemon {
         }
     }
 
-    receivedDamage(damage) {
+    receiveDamage(damage) {
         this.life -= damage
     }
 

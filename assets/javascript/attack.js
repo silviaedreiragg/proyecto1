@@ -4,16 +4,47 @@ class Attack {
         this.type = type
         this.stamine = stamine
         this.audio = new Audio(audio)
-        this.effect = effect
+        this.effect = new Image()
+        this.effect.src = effect
+        this.w = 300
+        this.h = 150
+    }
+
+    draw() {
+        ctx.drawImage(this.effect, this.x, this.y, this.w, this.h);
+        this.animate()
+    }
+
+    animate() {
+        this.x += this.vx
+        this.y -= this.vy
 
     }
 
-    execute(target) {
-        // target.receiveDamage()
-        // target.drawAttack(this);
+    execute(game, target, isPlayer) {
+        game.blockUI()
+        
+        if (target === game.enemy) {
+            this.x = 0;
+            this.y = 150;
+            this.vx = 3.5;
+            this.vy = 1.5;
+        }
+        if (target === game.player) {
+           
+            this.x = 500
+            this.y = 30
+            this.vx = -3.5
+            this.vy = -1.5
+        }
+
+        game.attack = this;
+        setTimeout(() => {
+            target.receiveDamage(10);
+            game.unblockUI()
+        }, 1800) 
+
+
     }
 
-    setContext(ctx) {
-        this.ctx = ctx;
-    }
 }
