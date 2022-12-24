@@ -32,8 +32,17 @@ class Pokemon {
         }
     }
 
-    receiveDamage(damage) {
-        this.life -= damage
+    receiveDamage(attack) {
+        if (this.type === 'GRASS' && attack.type === 'FIRE') { this.life -= 30 }
+        if (this.type === 'FIRE' && attack.type === 'WATER') { this.life -= 30 }
+        if ((this.type === 'WATER' || this.type === 'ELECTRIC') && attack.type === 'GRASS') { this.life -= 30 }
+        if (this.type === 'GRASS' && attack.type === 'WATER') { this.life -= 5 }
+        if (this.type === 'FIRE' && attack.type === 'GRASS') { this.life -= 5 }
+        if (this.type === 'WATER' && attack.type === 'FIRE') { this.life -= 5 }
+        if (this.type === 'ELECTRIC' && attack.type === 'GRASS') { this.life -= 5 }
+        if (attack.type === 'DEFENSE') { this.life = this.life}
+
+       else { this.life -= 10 }
     }
 
     setContext(ctx) {

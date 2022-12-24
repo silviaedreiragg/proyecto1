@@ -6,7 +6,7 @@ class Game {
     this.background = new Background(ctx)
     this.UI = new UserInterface()
 
-    this.player = pokemons[0];
+    this.player = pokemons[1];
     this.player.setContext(this.ctx);
     this.player.setInitialPosition(10, 150);
 
@@ -35,12 +35,20 @@ class Game {
     this.ctx.clearRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.heigth)
   }
 
+
   drawLifeBars() {
     const playerLife = document.getElementById('playerLifeBar')
     playerLife.value = this.player.life
 
     const enemyLife = document.getElementById('enemyLifeBar')
     enemyLife.value = this.enemy.life
+  }
+
+  enemyAttack() {
+   const movement = this.enemy.attacks[Math.floor(Math.random * this.enemy.attacks.length)]
+   debugger
+    return movement.execute(this.player)
+   // this.isInteractive = true
   }
 
   blockUI() {
@@ -54,7 +62,7 @@ class Game {
   }
 
   drawAttack() {
-    if(this.attack){
+    if (this.attack) {
       this.attack.draw();
     }
   }
@@ -70,7 +78,7 @@ class Game {
   executeAttack(attack) {
     const playerAttacks = document.getElementById('player-attacks')
     playerAttacks.style.display = 'none'
-   
+
     playerAttacks.addEventListener('click', () => {
       this.isInteractive = false
 
@@ -79,26 +87,6 @@ class Game {
         this.player.attack.animate()
       }, 1000 / 60)
     })
-  }
-
-  getRandomAttack() {
-    return this.enemy.attacks[Math.floor(Math.random * this.enemy.attacks.length)]
-  }
-
-  enemyAttack() {
-    const attack = this.enemy.getRandomAttack()
-    attack.execute(this.player)
-    this.isInteractive = true
-
-
-    // 1. Elegir ataque aleatorio
-    // const attack = this.enemy.getRandomAttack();
-
-    // 2. Ejecutar ataque
-    // attack.execute(this.player);
-
-    // 3. Desbloquear UI
-    // this.isInteractive = true
   }
 
 }

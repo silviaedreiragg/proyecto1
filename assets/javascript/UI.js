@@ -20,25 +20,17 @@ initUI(game) {
         })
 
         btnAttack2.addEventListener('click', () => {
-            game.enemy.attacks[1].execute(game, game.enemy)
+            game.player.attacks[1].execute(game, game.enemy)
         })
 
         btnAttack3.addEventListener('click', () => {
-            game.enemy.attacks[2].execute(game, game.enemy)
+            game.player.attacks[2].execute(game, game.enemy)
 
         })
 
         btnAttack4.addEventListener('click', () => {
-            game.enemy.attacks[3].execute(game, game.enemy)
+            game.player.attacks[3].execute(game, game.enemy)
 
         })
 }
-
-    draw(player) {
-        
-    
-    }
-    
-
-
 }

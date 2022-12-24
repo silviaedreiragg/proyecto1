@@ -40,11 +40,11 @@ class Attack {
 
         game.attack = this;
         setTimeout(() => {
-            target.receiveDamage(10);
+            target.receiveDamage(this);
             game.unblockUI()
         }, 1800) 
-
-
     }
+
+   
 
 }
