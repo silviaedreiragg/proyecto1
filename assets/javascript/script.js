@@ -7,6 +7,15 @@ enemyLife.style.display = 'none'
 const playerAttacks = document.getElementById('player-attacks')
 playerAttacks.style.display = 'none'
 
+const youWin = document.getElementById(`youWin`);
+youWin.style.display = 'none'
+
+const gameOver = document.getElementById(`gameOver`);
+gameOver.style.display = 'none'
+
+const playAgain = document.getElementById('playAgain');
+playAgain.style.display = 'none'
+
 const latigoCepa = new Attack('LÁTIGO CEPA', 'GRASS', 25, '', 'assets/images/efectos/latigocepa.png');
 const dobleEquipo = new Attack('DOBLE EQUIPO', 'DEFENSE', 20, '', 'assets/images/efectos/dobleequipo.png');
 const hojaAfilada = new Attack('HOJA AFILADA', 'GRASS', 10, '', 'assets/images/efectos/hojaafilada.png', 300, 150, 2, 1.5);
@@ -63,5 +72,11 @@ startbtn.addEventListener('click', () => {
     playerLife.style.display = 'block'
     enemyLife.style.display = 'block'
     playerAttacks.style.display = 'block'
-
 }) 
+
+playAgain.addEventListener('click', () => {
+    game.start()
+    playerLife.style.display = 'block'
+    enemyLife.style.display = 'block'
+    playerAttacks.style.display = 'block'
+})

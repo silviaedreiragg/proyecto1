@@ -46,3 +46,21 @@
 #fatherDiv {
     position: absolute;
 }
+
+#youWin {
+    position: relative;
+    bottom: 200px;
+    left: 200px;
+    align-self: center;
+    font-size: xx-large;
+    color: white;
+}
+
+#gameOver {
+    position: relative;
+    bottom: 200px;
+    left: 200px;
+    align-self: center;
+    font-size: xx-large;
+    color: white;
+}

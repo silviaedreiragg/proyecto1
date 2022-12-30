@@ -18,21 +18,18 @@ class Attack {
     animate() {
         this.x += this.vx
         this.y -= this.vy
-
     }
 
-    execute(game, target, isPlayer) {
+    execute(game, target) {
         game.blockUI()
-        
         if (target === game.enemy) {
             this.x = 0;
             this.y = 150;
             this.vx = 3.5;
             this.vy = 1.5;
         }
-        if (target === game.player) {
-           
-            this.x = 500
+        if (target === game.player) { 
+            this.x = 300
             this.y = 30
             this.vx = -3.5
             this.vy = -1.5
@@ -41,7 +38,9 @@ class Attack {
         game.attack = this;
         setTimeout(() => {
             target.receiveDamage(this);
-            game.unblockUI()
+            const isEnemyAttacking = target === game.player
+            game.finishTurn(isEnemyAttacking)
+
         }, 1800) 
     }
 

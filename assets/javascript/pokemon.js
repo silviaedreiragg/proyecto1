@@ -21,8 +21,15 @@ class Pokemon {
     }
 
     draw() {
-        this.ctx.drawImage(this.img, this.x, this.y, 200, 120);
-        this.animate();
+        if (this.life > 0) {
+            this.ctx.drawImage(this.img, this.x, this.y, 200, 120);
+            this.animate();
+        }
+    }
+
+    getRandomAttack() {
+        const index = Math.floor(Math.random()*this.attacks.length)
+        return this.attacks[index]
     }
 
     animate() {
@@ -34,6 +41,7 @@ class Pokemon {
 
     receiveDamage(attack) {
         if (this.type === 'GRASS' && attack.type === 'FIRE') { this.life -= 30 }
+        if (this.type === 'WATER' && attack.type === 'ELECTRIC') { this.life -= 30 }
         if (this.type === 'FIRE' && attack.type === 'WATER') { this.life -= 30 }
         if ((this.type === 'WATER' || this.type === 'ELECTRIC') && attack.type === 'GRASS') { this.life -= 30 }
         if (this.type === 'GRASS' && attack.type === 'WATER') { this.life -= 5 }
