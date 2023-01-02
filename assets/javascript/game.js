@@ -1,29 +1,42 @@
 class Game {
   constructor(ctx, pokemons) {
+    this.pokemons = pokemons;
     this.ctx = ctx
     this.interval = null
-    this.isInteractive = true
     this.background = new Background(ctx)
     this.UI = new UserInterface()
 
-    this.player = pokemons[0];
-    this.player.setContext(this.ctx);
-    this.player.setInitialPosition(10, 150);
 
-    this.enemy = pokemons[3];
-    this.enemy.setContext(this.ctx);
-    this.enemy.setInitialPosition(400, 30);
 
     this.tick = 60 * 5
     this.audio = new Audio('./assets/sounds/comienzo-batalla.mp3')
   }
 
-  start() {
+
+
+  start(player) {
+    // start(player)
+
+    this.player = player;
+    this.player.setContext(this.ctx);
+    this.player.setInitialPosition(10, 150);
+
+    this.enemy = this.getRandomEnemy();
+    this.enemy.setContext(this.ctx);
+    this.enemy.setInitialPosition(400, 30);
+
+    this.player.life = 100;
+    this.enemy.life = 100;
+
     this.audio.play()
     this.player.sound.play()
     this.enemy.sound.play()
+
     this.UI.initUI(this)
 
+    if (this.interval) {
+      clearInterval(this.interval);
+    }
 
     this.interval = setInterval(() => {
       this.clear()
@@ -31,6 +44,8 @@ class Game {
       this.isAlive()
     }, 1000 / 60)
   }
+
+  stop() {}
 
   isAlive() {
     if (this.player.life <= 0) {
@@ -40,6 +55,11 @@ class Game {
       this.UI.youWin()
     }
 
+  }
+
+  getRandomEnemy() {
+    const index = Math.floor(Math.random() * this.pokemons.length)
+    return this.pokemons[index]
   }
 
   clear() {

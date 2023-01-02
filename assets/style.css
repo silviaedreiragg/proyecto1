@@ -22,7 +22,6 @@
 }
 
 #player-life {
-    border: 5px solid red;
     width: 200px;
     height: 20px;
     position: relative;
@@ -33,7 +32,6 @@
 }
 
 #enemy-life {
-    border: 5px solid red;
     width: 200px;
     height: 20px;
     position: relative;
@@ -50,7 +48,7 @@
 #youWin {
     position: relative;
     bottom: 200px;
-    left: 200px;
+    left: 50px;
     align-self: center;
     font-size: xx-large;
     color: white;

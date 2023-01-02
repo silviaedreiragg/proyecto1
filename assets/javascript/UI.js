@@ -1,6 +1,8 @@
 class UserInterface {
 
     initUI(game) {
+       
+
         const btnAttack1 = document.getElementById('attack-1')
         btnAttack1.innerText = game.player.getAttackNames()[0]
 
@@ -16,7 +18,6 @@ class UserInterface {
 
         btnAttack1.addEventListener('click', () => {
             game.player.attacks[0].execute(game, game.enemy)
-
         })
 
         btnAttack2.addEventListener('click', () => {
@@ -25,19 +26,19 @@ class UserInterface {
 
         btnAttack3.addEventListener('click', () => {
             game.player.attacks[2].execute(game, game.enemy)
-
         })
 
         btnAttack4.addEventListener('click', () => {
             game.player.attacks[3].execute(game, game.enemy)
-
         })
+
+        this.start();
     }
+
     gameOver() {
         const gameOver = document.getElementById(`gameOver`);
         gameOver.style.display = 'block'
-
-       
+ 
         const canvas = document.getElementById('game');
         const ctx = canvas.getContext('2d')
         ctx.fillStyle = 'red'
@@ -52,15 +53,6 @@ class UserInterface {
         const playAgain = document.getElementById('playAgain');
         playAgain.style.display = 'block'
 
-        const game = new Game(ctx, pokemons);
-
-        playAgain.addEventListener('click', () => {
-            game.start()
-            playerLife.style.display = 'block'
-            enemyLife.style.display = 'block'
-            playerAttacks.style.display = 'block'
-        })
-
     }
 
 
@@ -68,22 +60,33 @@ class UserInterface {
         const youWin = document.getElementById(`youWin`);
         youWin.style.display = 'block'
 
-        const canvas = document.getElementById('game');
         const ctx = canvas.getContext('2d')
         ctx.fillStyle = 'green'
         ctx.fillRect(0, 0, 600, 350)
-
         const playerLife = document.getElementById('player-life');
         playerLife.style.display = 'none'
-
         const enemyLife = document.getElementById('enemy-life');
         enemyLife.style.display = 'none'
-
         const playerAttacks = document.getElementById('player-attacks');
         playerAttacks.style.display = 'none'
 
         const playAgain = document.getElementById('playAgain');
-playAgain.style.display = 'block'
+        playAgain.style.display = 'block'
 
+    }
+
+    start() {
+        const youWin = document.getElementById(`youWin`);
+        const gameOver  = document.getElementById('gameOver')
+        const canvas = document.getElementById('game');
+        const playerLife = document.getElementById('player-life');
+        const enemyLife = document.getElementById('enemy-life');
+        const playerAttacks = document.getElementById('player-attacks');
+
+        gameOver.style.display = "none";
+        youWin.style.display = "none";        canvas.style.display ='block'
+        playerLife.style.display = 'block'
+        enemyLife.style.display = 'block'
+        playerAttacks.style.display = 'block'
     }
 }

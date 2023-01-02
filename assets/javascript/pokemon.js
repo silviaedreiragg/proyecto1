@@ -9,6 +9,7 @@ class Pokemon {
         this.sound = new Audio(soundSrc);
         this.type = type;
 
+
         // This is constant per every pokemon
         this.w = 300
         this.h = 150

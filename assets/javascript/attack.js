@@ -1,9 +1,8 @@
 class Attack {
-    constructor(name, type, stamine, audio, effect) {
+    constructor(name, type, stamine, effect) {
         this.name = name
         this.type = type
         this.stamine = stamine
-        this.audio = new Audio(audio)
         this.effect = new Image()
         this.effect.src = effect
         this.w = 300
@@ -38,8 +37,8 @@ class Attack {
         game.attack = this;
         setTimeout(() => {
             target.receiveDamage(this);
-            const isEnemyAttacking = target === game.player
-            game.finishTurn(isEnemyAttacking)
+            const yAttacking = target === game.player
+            game.finishTurn(yAttacking)
 
         }, 1800) 
     }
