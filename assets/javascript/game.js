@@ -15,7 +15,6 @@ class Game {
 
 
   start(player) {
-    // start(player)
 
     this.player = player;
     this.player.setContext(this.ctx);
@@ -45,7 +44,9 @@ class Game {
     }, 1000 / 60)
   }
 
-  stop() {}
+  whatIsHappening() {
+
+  }
 
   isAlive() {
     if (this.player.life <= 0) {

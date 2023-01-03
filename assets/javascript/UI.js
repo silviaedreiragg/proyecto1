@@ -2,7 +2,6 @@ class UserInterface {
 
     initUI(game) {
        
-
         const btnAttack1 = document.getElementById('attack-1')
         btnAttack1.innerText = game.player.getAttackNames()[0]
 
@@ -18,18 +17,22 @@ class UserInterface {
 
         btnAttack1.addEventListener('click', () => {
             game.player.attacks[0].execute(game, game.enemy)
+            // 'Tu pokemon ha usado ${game.player.attacks[0]}!'
         })
 
         btnAttack2.addEventListener('click', () => {
             game.player.attacks[1].execute(game, game.enemy)
+            // 'Tu pokemon ha usado ${game.player.attacks[1]}!'
         })
 
         btnAttack3.addEventListener('click', () => {
             game.player.attacks[2].execute(game, game.enemy)
+            // 'Tu pokemon ha usado ${game.player.attacks[2]}!'
         })
 
         btnAttack4.addEventListener('click', () => {
             game.player.attacks[3].execute(game, game.enemy)
+            // 'Tu pokemon ha usado ${game.player.attacks[3]}!'
         })
 
         this.start();

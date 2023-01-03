@@ -14,7 +14,7 @@ class Pokemon {
         this.w = 300
         this.h = 150
         this.vx = 0
-        this.vy = 1.5
+        this.vy = 1.2
     }
 
     getAttackNames() {
@@ -35,7 +35,7 @@ class Pokemon {
 
     animate() {
         this.y += this.vy
-        if (this.y <= (this.initialY - 20) || this.y >= (this.initialY + 20)) {
+        if (this.y <= (this.initialY - 10) || this.y >= (this.initialY + 10)) {
             this.vy *= -1
         }
     }

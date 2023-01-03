@@ -25,7 +25,6 @@ const hojaAfilada = new Attack('HOJA AFILADA', 'GRASS', 10, 'assets/images/efect
 const placaje = new Attack('PLACAJE', 'NORMAL', 15, 'assets/images/efectos/placaje.png');
 const pistolaAgua = new Attack('PISTOLA AGUA', 'WATER', 15, 'assets/images/efectos/pistolagua.png');
 const surf = new Attack('SURF', 'WATER', 5, 'assets/images/efectos/surf2.png');
-const puñetazo = new Attack('PUÑETAZO', 'NORMAL', 25, 'assets/images/efectos/puño-delado.png');
 const latigo = new Attack('LÁTIGO', 'DEFENSE', 20, 'assets/images/efectos/latigo.png');
 const impactrueno = new Attack('IMPACTRUENO', 'ELECTRIC', 15, 'assets/images/efectos/impactrueno.png');
 const rayo = new Attack('RAYO', 'ELECTRIC', 5, 'assets/images/efectos/rayo.png');
@@ -89,5 +88,6 @@ playAgain.addEventListener('click', () => {
     choose.style.display = "block";
     const playAgain = document.getElementById('playAgain');
     playAgain.style.display = 'none'
+    console.log(playAgain.style.display)
 
 })
