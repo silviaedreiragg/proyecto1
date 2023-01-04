@@ -6,12 +6,9 @@ class Game {
     this.background = new Background(ctx)
     this.UI = new UserInterface()
 
-
-
     this.tick = 60 * 5
     this.audio = new Audio('./assets/sounds/comienzo-batalla.mp3')
   }
-
 
 
   start(player) {
@@ -44,8 +41,11 @@ class Game {
     }, 1000 / 60)
   }
 
-  whatIsHappening() {
+  whatIsHappening(player, attack) {
+    const dialogue = document.getElementById('dialogue')
 
+    dialogue.style.visibility = 'visible'
+    dialogue.innerText = `${player.name} ha usado ${attack.name}!`
   }
 
   isAlive() {
@@ -55,7 +55,6 @@ class Game {
     if (this.enemy.life <= 0) {
       this.UI.youWin()
     }
-
   }
 
   getRandomEnemy() {
@@ -77,7 +76,6 @@ class Game {
     }
   }
 
-
   drawLifeBars() {
     const playerLife = document.getElementById('playerLifeBar')
     playerLife.value = this.player.life
@@ -88,12 +86,12 @@ class Game {
 
   blockUI() {
     const playerAttacks = document.getElementById('player-attacks')
-    playerAttacks.style.display = `none`
+    playerAttacks.style.visibility = `hidden`
   }
 
   unblockUI() {
     const playerAttacks = document.getElementById('player-attacks')
-    playerAttacks.style.display = `block`
+    playerAttacks.style.visibility = `visible`
   }
 
   drawAttack() {

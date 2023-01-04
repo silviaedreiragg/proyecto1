@@ -17,7 +17,8 @@ class UserInterface {
 
         btnAttack1.addEventListener('click', () => {
             game.player.attacks[0].execute(game, game.enemy)
-            // 'Tu pokemon ha usado ${game.player.attacks[0]}!'
+            game.whatIsHappening(game.player, game.player.attacks[0])
+            
         })
 
         btnAttack2.addEventListener('click', () => {
@@ -90,6 +91,6 @@ class UserInterface {
         youWin.style.display = "none";        canvas.style.display ='block'
         playerLife.style.display = 'block'
         enemyLife.style.display = 'block'
-        playerAttacks.style.display = 'block'
+        playerAttacks.style.display = 'grid'
     }
 }

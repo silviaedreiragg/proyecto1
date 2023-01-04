@@ -19,6 +19,9 @@ playAgain.style.display = 'none'
 const choose = document.getElementById('choose');
 choose.style.display = 'none'
 
+const dialogue = document.getElementById('dialogue')
+ dialogue.style.visibility ='hidden'
+
 const latigoCepa = new Attack('LÁTIGO CEPA', 'GRASS', 25, 'assets/images/efectos/latigocepa.png');
 const dobleEquipo = new Attack('DOBLE EQUIPO', 'DEFENSE', 20, 'assets/images/efectos/dobleequipo.png');
 const hojaAfilada = new Attack('HOJA AFILADA', 'GRASS', 10, 'assets/images/efectos/hojaafilada.png', 300, 150, 2, 1.5);
@@ -38,7 +41,6 @@ const pokemons = [
     new Charmander(),
 ];
 
-
 const canvas = document.getElementById('game');
 const ctx = canvas.getContext('2d')
 
@@ -51,27 +53,27 @@ startbtn.addEventListener('click', () => {
     welcome.remove()
     canvas.style.display = 'block'
     choose.style.display = 'block'
-
 })
 
 const bulbasaurbtn = document.getElementById('bulbasaurbtn');
 bulbasaurbtn.addEventListener('click', () => {
     choose.style.display = 'none'
+    dialogue.style.visibility = 'visible'
     game.start(new Bulbasaur())
-
 })
 
 const squirtlebtn = document.getElementById('squirtlebtn');
 squirtlebtn.addEventListener('click', () => {
     choose.style.display = 'none'
+    dialogue.style.visibility = 'visible'
     game.start(new Squirtle())
-
 })
 
 
 const pikachubtn = document.getElementById('pikachubtn');
 pikachubtn.addEventListener('click', () => {
     choose.style.display = 'none'
+    dialogue.style.visibility = 'visible'
     game.start(new Pikachu())
 
 })
@@ -79,6 +81,7 @@ pikachubtn.addEventListener('click', () => {
 const charmanderbtn = document.getElementById('charmanderbtn');
 charmanderbtn.addEventListener('click', () => {
     choose.style.display = 'none'
+    dialogue.style.visibility = 'visible'
     game.start(new Charmander())
 })
 
@@ -88,6 +91,5 @@ playAgain.addEventListener('click', () => {
     choose.style.display = "block";
     const playAgain = document.getElementById('playAgain');
     playAgain.style.display = 'none'
-    console.log(playAgain.style.display)
 
 })

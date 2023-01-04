@@ -1,6 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-body, attack-1, attack-2, attack-3, attaack-4 {
+
+#player-attacks {
+    width: 60%;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    background: #f2f2f2;
+    border: 6px double black;
+}
+
+#dialogue {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    display: flex;
+    justify-content: end;
+    background-color: #f2f2f2;
+}
+
+#player-attacks button {
+    padding: 12px;
+    margin: 4px;
+    background: none;
+    border: 1px double black;
+    cursor: pointer;
+}
+
+body, #attack-1, #attack-2, #attack-3, #attack-4, #start-btn {
     font-family: 'Press Start 2P', cursive;
 }
 
@@ -11,6 +40,7 @@ body, attack-1, attack-2, attack-3, attaack-4 {
     color: purple;
     height: 350px;
     width: 600px;
+    position: relative;
 }
 
 #start-btn {
@@ -27,21 +57,24 @@ body, attack-1, attack-2, attack-3, attaack-4 {
     width: 600px;
 }
 
-#player-life {
-    width: 200px;
-    height: 20px;
-    position: relative;
-    bottom: 110px;
-    left: 400px;
-    color: white;
+progress {
+    width: 100%;
+}
 
+#player-life {
+    height: 20px;
+    position: absolute;
+    right: 10px;
+    bottom: 150px;
+    left: 230px;
+    color: white;
 }
 
 #enemy-life {
-    width: 200px;
+    width: 320px;
     height: 20px;
-    position: relative;
-    bottom: 320px;
+    top: 40px;
+    position: absolute;
     left: 50px;
     color: white;
 
