@@ -42,7 +42,7 @@ class Game {
   }
 
   whatIsHappening(player, attack) {
-    const dialogue = document.getElementById('dialogue')
+    const dialogue = document.getElementById('userInterface')
 
     dialogue.style.visibility = 'visible'
     dialogue.innerText = `${player.name} ha usado ${attack.name}!`
@@ -70,9 +70,11 @@ class Game {
     if (isEnemyAttacking) {
       this.unblockUI()
     }
-
     else {
-      this.enemy.getRandomAttack().execute(this, this.player)
+      const attackk = this.enemy.getRandomAttack()
+      attackk.execute(this, this.player)
+      this.enemy.whatHappened(this.enemy, attackk)
+
     }
   }
 

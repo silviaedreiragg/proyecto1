@@ -33,6 +33,17 @@ class Pokemon {
         return this.attacks[index]
     }
 
+    whatHappened(player, attack) {
+        const dialogue = document.getElementById('userInterface')
+    
+        dialogue.style.visibility = 'visible'
+        dialogue.innerText = `${player.name} ha usado ${attack.name}!`
+
+        setTimeout(() => {
+            dialogue.style.visibility = 'hidden'
+        }, 2000)
+      }
+
     animate() {
         this.y += this.vy
         if (this.y <= (this.initialY - 10) || this.y >= (this.initialY + 10)) {

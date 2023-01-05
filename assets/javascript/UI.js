@@ -1,5 +1,4 @@
 class UserInterface {
-
     initUI(game) {
        
         const btnAttack1 = document.getElementById('attack-1')
@@ -23,17 +22,17 @@ class UserInterface {
 
         btnAttack2.addEventListener('click', () => {
             game.player.attacks[1].execute(game, game.enemy)
-            // 'Tu pokemon ha usado ${game.player.attacks[1]}!'
+            game.whatIsHappening(game.player, game.player.attacks[1])
         })
 
         btnAttack3.addEventListener('click', () => {
             game.player.attacks[2].execute(game, game.enemy)
-            // 'Tu pokemon ha usado ${game.player.attacks[2]}!'
+            game.whatIsHappening(game.player, game.player.attacks[2])
         })
 
         btnAttack4.addEventListener('click', () => {
             game.player.attacks[3].execute(game, game.enemy)
-            // 'Tu pokemon ha usado ${game.player.attacks[3]}!'
+            game.whatIsHappening(game.player, game.player.attacks[3])
         })
 
         this.start();
@@ -88,9 +87,12 @@ class UserInterface {
         const playerAttacks = document.getElementById('player-attacks');
 
         gameOver.style.display = "none";
-        youWin.style.display = "none";        canvas.style.display ='block'
+        youWin.style.display = "none";        
+        canvas.style.display ='block'
         playerLife.style.display = 'block'
         enemyLife.style.display = 'block'
         playerAttacks.style.display = 'grid'
     }
 }
+
+

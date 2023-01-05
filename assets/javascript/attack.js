@@ -32,14 +32,15 @@ class Attack {
             this.y = 30
             this.vx = -3.5
             this.vy = -1.5
+
         }
 
         game.attack = this;
+    
         setTimeout(() => {
             target.receiveDamage(this);
             const yAttacking = target === game.player
             game.finishTurn(yAttacking)
-
         }, 1800) 
     }
 

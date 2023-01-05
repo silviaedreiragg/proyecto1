@@ -19,7 +19,7 @@ playAgain.style.display = 'none'
 const choose = document.getElementById('choose');
 choose.style.display = 'none'
 
-const dialogue = document.getElementById('dialogue')
+const dialogue = document.getElementById('userInterface')
  dialogue.style.visibility ='hidden'
 
 const latigoCepa = new Attack('LÁTIGO CEPA', 'GRASS', 25, 'assets/images/efectos/latigocepa.png');
